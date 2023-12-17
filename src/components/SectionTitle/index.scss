@@ -1,0 +1,54 @@
+.sectioon_title_content {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    height: 108px;
+
+    &_left {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 20px;
+
+        &_top {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+
+            svg {
+                width: 20px;
+                height: 40px;
+                color: #DB4444;
+            }
+
+            p {
+                color: #DB4444;
+                font-size: 16px;
+                font-weight: 600;
+                line-height: 20px;
+            }
+        }
+
+        &_bottom {
+            h2 {
+                color: #000;
+                font-size: 36px;
+                font-weight: 600;
+                line-height: 48px;
+                letter-spacing: 1.44px;
+            }
+        }
+    }
+
+    &_right {
+        button {
+            border: none;
+            padding: 8px 30px;
+            border-radius: 4px;
+            background: #DB4444;
+            color: #FAFAFA;
+            font-size: 16px;
+            font-weight: 500;
+        }
+    }
+}

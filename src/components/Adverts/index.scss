@@ -1,0 +1,54 @@
+#adverts {
+    padding: 140px 0px;
+    .adverts_container {
+        width: 943px;
+        margin: auto;
+        .adverts_cards {
+            width: 943px;
+            height: 161px;
+            display: flex;
+            justify-content: space-between;
+            .adverts_card {
+                width: 249px;
+                height: 161px;
+                display: flex;
+                align-items: center;
+                flex-direction: column;
+                &_icon {
+                    width: 80px;
+                    height: 80px;
+                    border-radius: 50%;
+                    background-color: #f5f5f5;
+                    display: grid;
+                    place-items: center;
+                    margin-bottom: 15px;
+
+                    &_border {
+                        width: 60px;
+                        height: 60px;
+                        border-radius: 50%;
+                        background-color: #000;
+                        display: grid;
+                        place-items: center;
+
+                    }
+                }
+
+                h4 {
+                    color: #000;
+                    font-size: 18px;
+                    font-weight: 600;
+                    line-height: 28px;
+                }
+
+                p {
+                    color: #000;
+                    text-align: center;
+                    font-size: 14px;
+                    font-weight: 400;
+                    line-height: 21px;
+                }
+            }
+        }
+    }
+}
