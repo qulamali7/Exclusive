@@ -12,7 +12,7 @@ const ProductsCards = () => {
                 "https://api.escuelajs.co/api/v1/products"
             );
             const data = await res.json();
-            setData(data);
+            setData(data.slice(1,17));
         } catch (error) {
             console.log(error.message);
         }

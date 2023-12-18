@@ -1,6 +1,7 @@
 .best_product_card {
     width: 270px;
-    height: 350px;
+    min-height: 350px;
+   
 
     &_img {
         width: 270px;
@@ -9,10 +10,11 @@
         border-radius: 4px;
         background: #F5F5F5;
         position: relative;
+        overflow: hidden;
         &:hover .add{
             opacity: 1;
             transform: translateY(0px);
-            height: 41px;
+            // height: 41px;
             transform-origin: center;
         }
         img {
@@ -58,11 +60,12 @@
 
         .add {
             width: 270px;
-            height: 0px;
+            height: 41px;
             border-radius: 0px 0px 4px 4px;
             background: #000;
             position: absolute;
             left: 0;
+            bottom: 0px;
             padding: 8px 0px;
             opacity: 0;
             transform: translateY(41px);
