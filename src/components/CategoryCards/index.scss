@@ -15,6 +15,16 @@
         &:hover{
             background-color: #DB4444;
         }
+        &:hover path {
+           stroke: #fff;
+        }
+        &:hover line {
+            stroke: #fff;
+         }
+        &:hover p {
+            color: #fff;
+         }
+ 
 
         &_content {
             display: flex;

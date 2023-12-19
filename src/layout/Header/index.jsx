@@ -18,7 +18,7 @@ const Header = () => {
           <div className="header_main">
             <div className="header_main_content">
               <div className="header_logo">
-                <h1>Exclusive</h1>
+                <h1><Link to={"/"}>Exclusive</Link></h1>
               </div>
               <ul>
                 <li>

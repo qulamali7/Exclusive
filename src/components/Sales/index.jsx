@@ -19,7 +19,7 @@ const Sales = () => {
   };
   async function GetFetch() {
     try {
-      const res = await fetch("https://api.escuelajs.co/api/v1/products");
+      const res = await fetch("https://657ef0619d10ccb465d58d01.mockapi.io/api/products/products");
       const data = await res.json();
       setData(data.slice(1, 17));
     } catch (error) {
@@ -39,7 +39,7 @@ const Sales = () => {
               {data.map((x) => (
                 <div className="best_product_card">
                   <div className="best_product_card_img">
-                    <img src={x.images} alt="" />
+                    <img src={x.image} alt="" />
                     <div className="best_product_card_heart">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -86,7 +86,7 @@ const Sales = () => {
                     </div>
                   </div>
                   <div className="best_product_card_text">
-                    <h4>{x.title}</h4>
+                    <h4>{x.name}</h4>
                     <p>{x.price}$</p>
                     <div className="best_product_card_text_icon">
                       <svg

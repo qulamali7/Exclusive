@@ -1,14 +1,16 @@
 import React, { useContext } from "react";
 import "./index.scss";
 import { BasketContext } from "../../context/BasketContext";
-const BestProductCard = ({ x, img, title, price, saleprice}) => {
+import { WishlistContext } from "../../context/WishlistContext";
+const BestProductCard = ({ x, img, name, price, saleprice,id}) => {
   const { addBasket } = useContext(BasketContext);
+  const {checkAtWishList ,addWishlist} = useContext(WishlistContext)
   return (
     <>
       <div className="best_product_card">
         <div className="best_product_card_img">
           <img src={img} alt="" />
-          <div className="best_product_card_heart">
+          <div className="best_product_card_heart" onClick={() => addWishlist(x)}>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="24"
@@ -16,7 +18,11 @@ const BestProductCard = ({ x, img, title, price, saleprice}) => {
               viewBox="0 0 24 24"
               fill="none"
             >
-              <path
+              <path className={`${
+                  checkAtWishList({x, img, name, price, saleprice,id})
+                    ? "active"
+                    : ""
+                }`}
                 d="M8 5C5.7912 5 4 6.73964 4 8.88594C4 10.6185 4.7 14.7305 11.5904 18.8873C11.7138 18.961 11.8555 19 12 19C12.1445 19 12.2862 18.961 12.4096 18.8873C19.3 14.7305 20 10.6185 20 8.88594C20 6.73964 18.2088 5 16 5C13.7912 5 12 7.35511 12 7.35511C12 7.35511 10.2088 5 8 5Z"
                 stroke="black"
                 strokeWidth="1.5"
@@ -33,7 +39,7 @@ const BestProductCard = ({ x, img, title, price, saleprice}) => {
               viewBox="0 0 22 16"
               fill="none"
             >
-              <path
+              <path 
                 d="M20.257 6.962C20.731 7.582 20.731 8.419 20.257 9.038C18.764 10.987 15.182 15 11 15C6.81801 15 3.23601 10.987 1.74301 9.038C1.51239 8.74113 1.38721 8.37592 1.38721 8C1.38721 7.62408 1.51239 7.25887 1.74301 6.962C3.23601 5.013 6.81801 1 11 1C15.182 1 18.764 5.013 20.257 6.962V6.962Z"
                 stroke="black"
                 stroke-width="1.5"
@@ -57,9 +63,9 @@ const BestProductCard = ({ x, img, title, price, saleprice}) => {
           </div>
         </div>
         <div className="best_product_card_text">
-          <h4>{title}</h4>
+          <h4>{name}</h4>
           <p>
-            {price} <span>{saleprice}</span>
+            {price}$<span>{saleprice}$</span>
           </p>
           <div className="best_product_card_text_icon">
             <svg

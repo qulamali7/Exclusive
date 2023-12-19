@@ -18,7 +18,8 @@ function WishlistProvider({ children }) {
     }
     const data = {
         wishlist,
-        addWishlist, checkAtWishList
+        addWishlist, 
+        checkAtWishList
     }
     return (
         <WishlistContext.Provider value={data}>{children}</WishlistContext.Provider>

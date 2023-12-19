@@ -10,9 +10,9 @@ const Basket = () => {
         {basket.map((x) => (
           <div className="best_product_card">
             <div className="best_product_card_img">
-              <img src={x.images} alt="" />
-              <div className="best_product_card_heart">
-                <svg
+              <img src={x.image} alt="" />
+              <div className="best_product_card_heart"  onClick={() => removeBasket(x)}>
+              <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="24"
                   height="24"
@@ -20,9 +20,9 @@ const Basket = () => {
                   fill="none"
                 >
                   <path
-                    d="M8 5C5.7912 5 4 6.73964 4 8.88594C4 10.6185 4.7 14.7305 11.5904 18.8873C11.7138 18.961 11.8555 19 12 19C12.1445 19 12.2862 18.961 12.4096 18.8873C19.3 14.7305 20 10.6185 20 8.88594C20 6.73964 18.2088 5 16 5C13.7912 5 12 7.35511 12 7.35511C12 7.35511 10.2088 5 8 5Z"
+                    d="M20 5.57143H5.33333L6.66667 21H17.3333L18.6667 5.57143H4M12 9.42857V17.1429M15.3333 9.42857L14.6667 17.1429M8.66667 9.42857L9.33333 17.1429M9.33333 5.57143L10 3H14L14.6667 5.57143"
                     stroke="black"
-                    stroke-width="1.5"
+                    stroke-width="1.56"
                     stroke-linecap="round"
                     stroke-linejoin="round"
                   />
@@ -54,8 +54,8 @@ const Basket = () => {
               </div>
             </div>
             <div className="best_product_card_text">
-              <h4>{x.title}</h4>
-              <p>Price:{Math.floor(+x.price * +x.count)}$</p>
+              <h4>{x.name}</h4>
+              <p>Price:{Math.floor(x.price * x.count)}$</p>
               <p>Count:{x.count}</p>
               <div className="best_product_card_text_icon">
                 <svg
@@ -123,7 +123,6 @@ const Basket = () => {
               <div className="basket_buttons">
                 <button onClick={() => increaseCount(x)}>+</button>
                 <button onClick={() => decreaseCount(x)}>-</button>
-                <button onClick={() => removeBasket(x)}>x</button>
               </div>
             </div>
           </div>

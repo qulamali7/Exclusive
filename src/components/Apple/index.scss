@@ -1,37 +1,49 @@
 #Apple {
-    padding-bottom: 80px;
-    .apple_container {
-        width: 1170px;
-        margin: auto;
+  padding-bottom: 80px;
+  .apple_container {
+    width: 1170px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+
+    .apple_left {
+      width: 247px;
+      height: 430px;
+      padding-top: 40px;
+      border-right: 1px solid #e5e5e5;
+
+      ul {
         display: flex;
-        justify-content: space-between;
-
-        .apple_left {
-            width: 247px;
-            height: 430px;
-            padding-top: 40px;
-            border-right: 1px solid #e5e5e5;
-
-            ul {
-                display: flex;
-                flex-direction: column;
-                gap: 20px;
-                height: 344px;
-            }
+        flex-direction: column;
+        gap: 20px;
+        height: 344px;
+        li {
+          transition: 0.5s all ease;
+          &:hover {
+            cursor: pointer;
+            color: #db4444;
+          }
         }
-
-        .apple_right {
-            width: 892px;
-            min-height: 304px;
-            margin-top: 40px;
-
-            .prev {
-                display: none;
-            }
-
-            .next {
-                display: none;
-            }
-        }
+      }
     }
+
+    .apple_right {
+      width: 892px;
+      min-height: 304px;
+      margin-top: 40px;
+
+      .prev {
+        display: none;
+      }
+
+      .next {
+        display: none;
+      }
+      .box {
+        .carousel-container {
+          height: 45vh !important;
+        }
+      }
+    }
+  }
 }
