@@ -38,7 +38,7 @@ const ProductsCards = () => {
                 >
                   <path
                   className={`${
-                    checkAtWishList(x.id)
+                    checkAtWishList(x)
                       ? "active"
                       : ""
                   }`}

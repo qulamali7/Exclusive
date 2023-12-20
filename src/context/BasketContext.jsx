@@ -1,8 +1,9 @@
-import React, { createContext, useState } from "react";
+import React, { createContext } from "react";
+import useLocalStorage from "../hook/useLocalStorage";
 export const BasketContext = createContext();
 
 function BasketProvider({ children }) {
-  const [basket, setBasket] = useState([]);
+  const [basket, setBasket] = useLocalStorage("basket", []);
   function addBasket(item) {
     const index = basket.findIndex((x) => x.id === item.id);
     if (index === -1) {
@@ -29,7 +30,11 @@ function BasketProvider({ children }) {
     setBasket([...basket]);
   }
   const data = {
-    basket,addBasket,removeBasket,increaseCount,decreaseCount
+    basket,
+    addBasket,
+    removeBasket,
+    increaseCount,
+    decreaseCount,
   };
   return (
     <BasketContext.Provider value={data}>{children}</BasketContext.Provider>

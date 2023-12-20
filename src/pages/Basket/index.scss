@@ -1,21 +1,97 @@
-.basket_cards{
-    margin-top: 50px;
-    display: flex;
+#basketPage {
+  padding: 80px 0px;
+  .basket_page_container {
     width: 1170px;
-    flex-wrap: wrap;
     margin: auto;
-    gap: 30px;
-}
-.basket_buttons{
-    margin-top: 20px;
-    button {
-        margin-right: 5px;
-        border: none;
-        padding: 4px 12px;
-        border-radius: 4px;
-        background: #DB4444;
-        color: #FAFAFA;
-        font-size: 16px;
-        font-weight: 500;
+    .basket_page_title {
+      border-radius: 4px;
+      background: #fff;
+      box-shadow: 0px 1px 13px 0px rgba(0, 0, 0, 0.05);
+      display: flex;
+      height: 72px;
+      padding: 24px 39px 24px 40px;
+      justify-content: space-between;
+      align-items: center;
+      h3 {
+        width: 25%;
+        text-align: center;
+      }
     }
+    .basket_page_cards {
+      .basket_page_card {
+        display: flex;
+        align-items: center;
+        height: 102px;
+        margin-top: 40px;
+        border-radius: 4px;
+        padding: 24px 39px 24px 40px;
+        background: #fff;
+        box-shadow: 0px 1px 13px 0px rgba(0, 0, 0, 0.05);
+        &_img {
+            gap: 5px;
+          display: flex;
+          align-items: center;
+          width: 25%;
+          text-align: center;
+          position: relative;
+          &:hover .remove{
+            opacity: 1;
+          }
+          img {
+            width: 54px;
+            height: 54px;
+          }
+          .remove{
+            position: absolute;
+            top: 2px;
+            left: 0;
+            transition: 0.5s all ease;
+            opacity: 0;
+            width: 24px;
+height: 24px;
+          }
+        }
+        p {
+          width: 25%;
+          text-align: center;
+        }
+        &_count {
+        //   border-radius: 4px;
+        //   background:  #fff;
+        //   box-shadow: 0px 1px 13px 0px rgba(0, 0, 0, 0.05);
+          width: 25%;
+          justify-content: center;
+          display: flex;
+          gap: 5px;
+          align-items: center;
+          &_icon {
+            display: flex;
+            flex-direction: column;
+          }
+        }
+      }
+    }
+  }
+}
+
+.basket_cards {
+  margin-top: 50px;
+  display: flex;
+  width: 1170px;
+  flex-wrap: wrap;
+  margin: auto;
+  gap: 30px;
+}
+.basket_buttons {
+  margin-top: 20px;
+  button {
+    margin-right: 5px;
+    border: none;
+    padding: 4px 12px;
+    border-radius: 4px;
+    background: #db4444;
+    color: #fafafa;
+    font-size: 16px;
+    font-weight: 500;
+  }
 }

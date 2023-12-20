@@ -18,11 +18,10 @@ const Wishlist = () => {
           <div className="best_product_card">
             <div
               className="best_product_card_img"
-              onClick={() => addWishlist(x)}
             >
               <img src={x.image} alt="" />
               <div className="best_product_card_heart">
-                <svg
+                <svg onClick={() => addWishlist(x)}
                   xmlns="http://www.w3.org/2000/svg"
                   width="24"
                   height="24"

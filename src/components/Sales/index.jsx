@@ -5,8 +5,10 @@ import "slick-carousel/slick/slick-theme.css";
 import SectionTitle from "../SectionTitle";
 import Slider from "react-slick";
 import { BasketContext } from "../../context/BasketContext";
+import { WishlistContext } from "../../context/WishlistContext";
 const Sales = () => {
-    const {addBasket} = useContext(BasketContext)
+  const { addBasket } = useContext(BasketContext);
+  const { addWishlist ,checkAtWishList } = useContext(WishlistContext);
   const [data, setData] = useState([]);
   const settings = {
     infinite: true,
@@ -19,7 +21,9 @@ const Sales = () => {
   };
   async function GetFetch() {
     try {
-      const res = await fetch("https://657ef0619d10ccb465d58d01.mockapi.io/api/products/products");
+      const res = await fetch(
+        "https://657ef0619d10ccb465d58d01.mockapi.io/api/products/products"
+      );
       const data = await res.json();
       setData(data.slice(1, 17));
     } catch (error) {
@@ -40,7 +44,10 @@ const Sales = () => {
                 <div className="best_product_card">
                   <div className="best_product_card_img">
                     <img src={x.image} alt="" />
-                    <div className="best_product_card_heart">
+                    <div
+                      className="best_product_card_heart"
+                      onClick={() => addWishlist(x)}
+                    >
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         width="24"
@@ -49,6 +56,11 @@ const Sales = () => {
                         fill="none"
                       >
                         <path
+                          className={`${
+                            checkAtWishList(x)
+                              ? "active"
+                              : ""
+                          }`}
                           d="M8 5C5.7912 5 4 6.73964 4 8.88594C4 10.6185 4.7 14.7305 11.5904 18.8873C11.7138 18.961 11.8555 19 12 19C12.1445 19 12.2862 18.961 12.4096 18.8873C19.3 14.7305 20 10.6185 20 8.88594C20 6.73964 18.2088 5 16 5C13.7912 5 12 7.35511 12 7.35511C12 7.35511 10.2088 5 8 5Z"
                           stroke="black"
                           stroke-width="1.5"
@@ -58,8 +70,8 @@ const Sales = () => {
                       </svg>
                     </div>
                     <div className="add" onClick={() => addBasket(x)}>
-                        <p>Add Basket</p>
-                      </div>
+                      <p>Add Basket</p>
+                    </div>
                     <div className="best_product_card_view">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"

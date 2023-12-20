@@ -6,13 +6,87 @@ const Basket = () => {
     useContext(BasketContext);
   return (
     <>
-      <div className="basket_cards">
+      <section id="basketPage">
+        <div className="basket_page_container">
+          <div className="basket_page_title">
+            <h3>Product</h3>
+            <h3>Price</h3>
+            <h3>Quantity</h3>
+            <h3>Subtotal</h3>
+          </div>
+          <div className="basket_page_cards">
+            {basket.map((x) => (
+              <div className="basket_page_card">
+                <div className="basket_page_card_img">
+                  <div className="basket_page_card_img_content">
+                    <img src={x.image} alt="" />
+                    <svg className="remove" onClick={() => removeBasket(x)}
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                    >
+                      <circle cx="12" cy="12" r="9" fill="#DB4444" />
+                      <path
+                        d="M9 15L12 12M15 9L11.9994 12M11.9994 12L9 9M12 12L15 15"
+                        stroke="white"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                    </svg>
+                  </div>
+                  <h4>LCD Monitor</h4>
+                </div>
+                <p>{x.price}</p>
+                <div className="basket_page_card_count">
+                  <span>{x.count}</span>
+                  <div className="basket_page_card_count_icon">
+                    <svg
+                      onClick={() => increaseCount(x)}
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="16"
+                      height="16"
+                      viewBox="0 0 16 16"
+                      fill="none"
+                    >
+                      <path
+                        d="M7.75732 7.36666L4.45732 10.6667L3.51465 9.72399L7.75732 5.48132L12 9.72399L11.0573 10.6667L7.75732 7.36666Z"
+                        fill="black"
+                      />
+                    </svg>
+                    <svg
+                      onClick={() => decreaseCount(x)}
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="16"
+                      height="16"
+                      viewBox="0 0 16 16"
+                      fill="none"
+                    >
+                      <path
+                        d="M8.24268 8.63334L11.5427 5.33334L12.4854 6.27601L8.24268 10.5187L4.00002 6.27601L4.94268 5.33334L8.24268 8.63334Z"
+                        fill="black"
+                      />
+                    </svg>
+                  </div>
+                </div>
+                <p>{Math.floor(x.price * x.count)}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+      {/* <div className="basket_cards">
         {basket.map((x) => (
           <div className="best_product_card">
             <div className="best_product_card_img">
               <img src={x.image} alt="" />
-              <div className="best_product_card_heart"  onClick={() => removeBasket(x)}>
-              <svg
+              <div
+                className="best_product_card_heart"
+                onClick={() => removeBasket(x)}
+              >
+                <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="24"
                   height="24"
@@ -127,7 +201,7 @@ const Basket = () => {
             </div>
           </div>
         ))}
-      </div>
+      </div> */}
     </>
   );
 };
