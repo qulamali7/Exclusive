@@ -3,7 +3,13 @@ import "./index.scss";
 const Footer = () => {
   return (
     <>
-    <footer>Footer</footer>
+    <footer>
+      <div className='footer_container'>
+        <div className='footer_content'>
+          <p> &#9426; Copyright Rimel 2022. All right reserved</p>
+        </div>
+      </div>
+    </footer>
     </>
   )
 }

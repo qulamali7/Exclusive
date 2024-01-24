@@ -29,7 +29,7 @@
 
     .apple_right {
       width: 892px;
-      min-height: 304px;
+      min-height: 500px;
       margin-top: 40px;
 
       .prev {
@@ -41,7 +41,13 @@
       }
       .box {
         .carousel-container {
-          height: 45vh !important;
+          height: 60vh !important;
+          .carousel-item{
+            height: 60vh !important;
+            img{
+              height: 100%;
+            }
+          }
         }
       }
     }
